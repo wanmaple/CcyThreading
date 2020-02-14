@@ -1,0 +1,6 @@
+# Visual Studio 2017
+
+.vs/
+Debug/
+Release/
+*.vcxproj.user
