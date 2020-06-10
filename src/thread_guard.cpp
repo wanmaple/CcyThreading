@@ -15,4 +15,15 @@ thread_guard::~thread_guard()
 	}
 }
 
+thread_guard::thread_guard(thread_guard && other) noexcept
+	: _th(other._th)
+{
+}
+
+thread_guard & thread_guard::operator=(thread_guard && other) noexcept
+{
+	_th = std::move(other._th);
+	return *this;
+}
+
 NS_CCY_END
