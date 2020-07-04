@@ -13,6 +13,9 @@
     <ClCompile Include="..\..\src\scoped_thread.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\threading_utils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\thread_guard.h">
@@ -25,6 +28,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\ccy_stack.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\threading_utils.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

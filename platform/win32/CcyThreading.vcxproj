@@ -125,12 +125,14 @@
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="..\..\src\scoped_thread.cpp" />
+    <ClCompile Include="..\..\src\threading_utils.cpp" />
     <ClCompile Include="..\..\src\thread_guard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\ccy_stack.h" />
     <ClInclude Include="..\..\src\macroes.h" />
     <ClInclude Include="..\..\src\scoped_thread.h" />
+    <ClInclude Include="..\..\src\threading_utils.h" />
     <ClInclude Include="..\..\src\thread_guard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
