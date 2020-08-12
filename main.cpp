@@ -3,7 +3,7 @@
 #include <vector>
 #include "src/thread_guard.h"
 #include "src/scoped_thread.h"
-#include "src/ccy_stack.h"
+#include "src/threadsafe_queue.h"
 
 using namespace std;
 using namespace ccy;
@@ -21,7 +21,7 @@ void doSth(int i)
 
 int main()
 {
-	ccy_stack<int> s;
+	threadsafe_queue<int> queue;
 
 	return 0;
 }

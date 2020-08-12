@@ -27,10 +27,10 @@
     <ClInclude Include="..\..\src\scoped_thread.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\ccy_stack.h">
+    <ClInclude Include="..\..\src\threading_utils.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\threading_utils.h">
+    <ClInclude Include="..\..\src\threadsafe_queue.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
