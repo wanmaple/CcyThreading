@@ -21,9 +21,3 @@ __CLS__ &operator=(const __CLS__ &) = delete;
 #define BIND_1(__SELECTOR__, __TARGET__, ...) std::bind(&__SELECTOR__, __TARGET__, std::placeholders::_1, ##__VA_ARGS__)
 #define BIND_2(__SELECTOR__, __TARGET__, ...) std::bind(&__SELECTOR__, __TARGET__, std::placeholders::_1, std::placeholders::_2, ##__VA_ARGS__)
 #define BIND_3(__SELECTOR__, __TARGET__, ...) std::bind(&__SELECTOR__, __TARGET__, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, ##__VA_ARGS__)
-
-#include <future>
-#define ASYNC_0(__SELECTOR__, __TARGET__, ...) std::async(&__SELECTOR__, __TARGET__, ##__VA_ARGS__)
-#define ASYNC_1(__SELECTOR__, __TARGET__, ...) std::async(&__SELECTOR__, __TARGET__, std::placeholders::_1, ##__VA_ARGS__)
-#define ASYNC_2(__SELECTOR__, __TARGET__, ...) std::async(&__SELECTOR__, __TARGET__, std::placeholders::_1, std::placeholders::_2, ##__VA_ARGS__)
-#define ASYNC_3(__SELECTOR__, __TARGET__, ...) std::async(&__SELECTOR__, __TARGET__, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, ##__VA_ARGS__)
