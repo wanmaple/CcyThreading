@@ -133,6 +133,7 @@
     <ClInclude Include="..\..\src\scoped_thread.h" />
     <ClInclude Include="..\..\src\threading_utils.h" />
     <ClInclude Include="..\..\src\threadsafe_queue.h" />
+    <ClInclude Include="..\..\src\threadsafe_stack.h" />
     <ClInclude Include="..\..\src\thread_guard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

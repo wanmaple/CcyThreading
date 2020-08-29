@@ -33,5 +33,8 @@
     <ClInclude Include="..\..\src\threadsafe_queue.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\threadsafe_stack.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
