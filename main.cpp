@@ -11,41 +11,29 @@
 using namespace std;
 using namespace ccy;
 
-class A
+int test1(int num)
 {
-public:
-	int test(float a)
-	{
-		return (int)(a * 100.0f);
-	}
-};
-
-hierarchical_mutex g_m1000(1000u);
-hierarchical_mutex g_m100(100u);
-
-void test1()
-{
-	std::lock_guard<hierarchical_mutex> lock(g_m1000);
-	for (size_t i = 0; i < 1000; i++)
-	{
-		cout << i << endl;
-	}
+    for (int i = 0; i < num; ++i) {
+        cout << "TEST1 " << i << endl;
+    }
+    return num;
 }
 
-void test2()
+void test2(float num)
 {
-	std::lock_guard<hierarchical_mutex> lock(g_m100);
-	SLEEP(1000);
-	for (size_t i = 0; i < 1000; i++)
-	{
-		cout << (i + 20000) << endl;
-	}
+    float sum = 0.0f;
+    for (int i = 0; i < 10000; ++i) {
+        sum += i;
+    }
+    cout << "TEST2 " << (sum / num) << endl;
 }
 
 int main()
 {
-	test1();
-	test2();
+    auto f1 = threading_utils::make_async(test1, 1000);
+    auto f2 = threading_utils::make_async(test2, 22225.0f);
+    cout << f1.get() << endl;
+    f2.wait();
 
 	return 0;
 }

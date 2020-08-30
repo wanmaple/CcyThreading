@@ -5,3 +5,8 @@ Debug/
 Release/
 *.vcxproj.user
 ~*
+
+# XCode
+.DS_Store
+project.xcworkspace/
+xcuserdata/
