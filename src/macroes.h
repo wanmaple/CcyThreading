@@ -17,7 +17,7 @@ __CLS__ &operator=(const __CLS__ &) = delete;
 #define uint64 uint64_t
 
 #include <chrono>
-#define SLEEP(__MS__) std::this_thread::sleep_for(std::chrono::milliseconds(__MS__));
+#define SLEEP(__MS__) if (__MS__ > 0) std::this_thread::sleep_for(std::chrono::milliseconds(__MS__));
 
 #include <functional>
 #define BIND_0(__SELECTOR__, __TARGET__, ...) std::bind(&__SELECTOR__, __TARGET__, ##__VA_ARGS__)
