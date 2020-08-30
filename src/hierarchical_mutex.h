@@ -17,7 +17,8 @@ public:
 private:
 	static thread_local uint64 THIS_THREAD_HIERARCHY_VALUE;
 
-	void check_for_hierarchy_violation();
+	void check_for_hierarchy_violation_and_throw();
+	bool check_for_hierarchy_violation();
 	void update_hierarchy_value();
 
 	std::mutex _m;

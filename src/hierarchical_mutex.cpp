@@ -12,7 +12,7 @@ hierarchical_mutex::hierarchical_mutex(uint64 val)
 
 void hierarchical_mutex::lock()
 {
-	check_for_hierarchy_violation();
+	check_for_hierarchy_violation_and_throw();
 	_m.lock();
 	update_hierarchy_value();
 }
@@ -25,7 +25,10 @@ void hierarchical_mutex::unlock()
 
 bool hierarchical_mutex::try_lock()
 {
-	check_for_hierarchy_violation();
+	if (!check_for_hierarchy_violation())
+	{
+		return false;
+	}
 	if (!_m.try_lock())
 	{
 		return false;
@@ -34,12 +37,14 @@ bool hierarchical_mutex::try_lock()
 	return true;
 }
 
-void hierarchical_mutex::check_for_hierarchy_violation()
+void hierarchical_mutex::check_for_hierarchy_violation_and_throw()
 {
-	if (THIS_THREAD_HIERARCHY_VALUE <= _hierarchy_val)
-	{
-		throw std::logic_error("mutex hierarchy violated.");
-	}
+	THROW_IF(THIS_THREAD_HIERARCHY_VALUE <= _hierarchy_val, std::logic_error("mutex hierarchy violated."));
+}
+
+bool hierarchical_mutex::check_for_hierarchy_violation()
+{
+	return THIS_THREAD_HIERARCHY_VALUE > _hierarchy_val;
 }
 
 void hierarchical_mutex::update_hierarchy_value()

@@ -16,6 +16,9 @@
     <ClCompile Include="..\..\src\threading_utils.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\hierarchical_mutex.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\thread_guard.h">
@@ -34,6 +37,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\threadsafe_stack.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\hierarchical_mutex.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
